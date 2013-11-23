@@ -62,4 +62,4 @@
 
     $window.resize(onResize);
     $(document).ready(init);
-})(document, window, jQuery);
+})(document, window, $);
