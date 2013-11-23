@@ -1,0 +1,139 @@
+@import "normalize";
+@import "variables";
+@import "bourbon/bourbon";
+@import "foundation/foundation";
+@import "icomoon";
+@import "animations";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+
+  @include transition-duration($transition-duration);
+  @include transition-property(background);
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: $header-font-size;
+  padding-bottom: 0.2em;
+}
+
+.handwriting {
+  font-family: $handwriting-font-family;
+}
+
+#frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer !important;
+  @include perspective(3000px);
+  @include perspective-origin(50% 50%);
+
+  ul.slidee {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    @include transform(translateZ(0));
+    @include transform-style(preserve-3d);
+
+    li.page {
+      display: block;
+      float: left;
+      height: 100%;
+      padding: 15px;
+      background: none;
+      opacity: $item-inactive-opacity;
+      @include transform(scale($item-small-scale) rotateY($item-rotation));
+      @include transition-duration($transition-duration);
+      @include transition-property(opacity, transform);
+
+      &.active {
+        opacity: 1;
+        @include transform(scale(1) rotateY(0deg));
+
+        & ~ li {
+          @include transform(scale($item-small-scale) rotateY(-$item-rotation));
+        }
+      }
+    }
+  }
+
+  .item-content {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    max-width: $max-item-width;
+    margin: 0 auto;
+
+    header {
+      display: table-row;
+    }
+
+    h1 {
+      display: table-cell;
+      width: 100%;
+    }
+
+    .item-main {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media #{$small} {
+  html, body { font-size: 140%; }
+  h1 { font-size: $header-font-size * 1.6; }
+  #frame ul.slidee li.page { padding: 30px; }
+}
+
+@media #{$medium} {
+  html, body { font-size: 155%; }
+  h1 { font-size: $header-font-size * 2; }
+  #frame ul.slidee li.page { padding: 50px; }
+}
+
+@media #{$large} {
+  html, body { font-size: 165%; }
+  h1 { font-size: $header-font-size * 2.3; }
+  #frame ul.slidee li.page { padding: 70px; }
+}
+
+
+@media screen and (max-height: 800px) {
+  #frame ul.slidee li.page { padding: 30px; }
+}
+
+@media screen and (max-height: 600px) {
+  html, body { font-size: 130%; }
+  #frame ul.slidee li.page { padding: 20px; }
+}
+
+@media screen and (max-height: 400px) {
+  html, body { font-size: 120%; }
+  #frame ul.slidee li.page { padding: 10px; }
+}
+
+@import "labeled-list";
+@import "flip-card";
+@import "intro";
+@import "work";
+@import "tools";
+@import "hobbies";
+@import "contact";

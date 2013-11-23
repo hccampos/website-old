@@ -1,0 +1,31 @@
+.card {
+  @include transform(rotateY(0deg));
+  @include transform-style(preserve-3d);
+  @include transition-duration(1s);
+  @include transition-property(transform);
+}
+
+.card-wrapper:hover .card {
+  @include transform(rotateY(180deg));
+  .card-face.front { z-index: 0; }
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  @include backface-visibility(hidden);
+
+  &.front {
+    z-index: 10;
+    @include transform(rotateY(0deg));
+  }
+
+  &.back {
+    background: fade-out(#fff, 0.95);
+    @include transform(rotateY(180deg));
+  }
+}

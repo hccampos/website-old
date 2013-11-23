@@ -1,0 +1,91 @@
+$img-link-size: 5.5em;
+
+#work-page {
+  h1 { text-align: center; }
+
+  .intro {
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  .links-container {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 0.6em;
+  }
+
+  .link-col {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 0.2em;
+  }
+
+  .img-link-wrapper {
+    display: inline-block;
+    width: $img-link-size;
+    height: $img-link-size;
+
+    @include perspective(800px);
+    @include perspective-origin(50% 50%);
+  }
+
+  .img-link {
+    display: block;
+    position: relative;
+    width: $img-link-size;
+    height: $img-link-size;
+    text-decoration: none;
+    color: $body-font-color;
+
+    img {
+      display: block;
+      @include backface-visibility(hidden);
+    }
+
+    &:hover { color: $body-font-color; }
+  }
+
+  .card-face.back {
+    display: table;
+  }
+
+  .card-back-content {
+    display: table-cell;
+    padding: 0.2em;
+    vertical-align: middle;
+    font-size: 0.8em;
+
+    i {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  #work-page .links-container { font-size: 0.7em; }
+}
+
+@media screen and (min-width: 525px) {
+  #work-page {
+    .links-container { font-size: 0.8em; }
+    .link-col {
+      width: 33%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #work-page {
+    .intro { font-size: 1em; }
+    .links-container { font-size: 0.9em; }
+  }
+}
+
+@media #{$small} {
+  #work-page {
+    .links-container { font-size: 1em; }
+  }
+}

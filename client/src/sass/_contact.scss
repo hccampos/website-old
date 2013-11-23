@@ -1,0 +1,43 @@
+$contact-btn-size: 3em;
+
+#contact-page {
+  .item-main {
+    text-align: center;
+  }
+
+  h1 { text-align: center; }
+
+  .contact-btn {
+    @include button-base();
+    @include button-size($padding:$button-sml);
+    @include single-transition(background-color);
+    @include button-style($bg: #4b8c2d, $round: true, $popped: true);
+
+    &.facebook { @include button-style($bg: #3b5998, $round: true, $popped: true); }
+    &.twitter { @include button-style($bg: #00aced, $round: true, $popped: true); }
+    &.linkedin { @include button-style($bg: #007bb6, $round: true, $popped: true); }
+    &.googleplus { @include button-style($bg: #dd4b39, $round: true, $popped: true); }
+    &.github { @include button-style($bg: #7a7a7a, $round: true, $popped: true); }
+
+    width: $contact-btn-size;
+    height: $contact-btn-size;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.3em;
+
+    i {
+      font-size: $contact-btn-size * 0.6;
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -0.5em;
+      margin-top: -0.5em;
+
+      &:before {
+        vertical-align: baseline;
+      }
+    }
+  }
+}

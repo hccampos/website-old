@@ -1,0 +1,59 @@
+ul.labeled-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0.8em;
+
+  li {
+    margin: 0;
+    margin-bottom: 0.5em;
+    font-size: 0.7em;
+    font-weight: 400;
+
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.8em;
+      &:before { vertical-align: top; }
+    }
+
+    .label {
+      display: inline-block;
+      height: 1.8em;
+      vertical-align: middle;
+      max-width: 0;
+      overflow: hidden;
+      opacity: 0;
+      line-height: 1.5em;
+      white-space: nowrap;
+
+      @include transition-duration(1.5s);
+      @include transition-property(max-width, opacity);
+    }
+
+    a {
+      color: $body-font-color;
+      text-decoration: none;
+      height: 1.8em;
+
+      @include transition-property(color);
+      @include transition-duration(0.5s);
+
+      &:hover {
+        color: fade-out(#000, 0.55);
+        .label {
+          max-width: 500px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media #{$small} {
+  ul.labeled-list li {
+    font-size: 1em;
+    font-weight: 300;
+  }
+}
