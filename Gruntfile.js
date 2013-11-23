@@ -62,12 +62,12 @@ module.exports = function (grunt) {
                 html: [clientPath + '/src/index.html'],
                 vendor: [
                     vendorPath + '/lodash/dist/lodash.js',
-                    vendorPath + '/underscore.string/lib/underscore.string.js',
+                    //vendorPath + '/underscore.string/lib/underscore.string.js',
                     vendorPath + '/jquery/jquery.js',
-                    vendorPath + '/backbone/backbone.js',
-                    vendorPath + '/FitText.js/jquery.fittext.js',
-                    vendorPath + '/moment/moment.js',
-                    vendorPath + '/spin.js/spin.js',
+                    //vendorPath + '/backbone/backbone.js',
+                    //vendorPath + '/FitText.js/jquery.fittext.js',
+                    //vendorPath + '/moment/moment.js',
+                    //vendorPath + '/spin.js/spin.js',
                     vendorPath + '/sly/dist/sly.js'
                 ],
                 sassDir: sassPath,
