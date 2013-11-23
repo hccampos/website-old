@@ -45,7 +45,7 @@ module.exports = function (grunt) {
     });
 
     var clientPath = 'client';
-    var vendorPath = clientPath + '/bower_components';
+    var vendorPath = clientPath + '/vendor';
     var sassPath = clientPath + '/src/sass';
     var serverPath = 'server';
 
@@ -61,14 +61,14 @@ module.exports = function (grunt) {
                 js: [clientPath + '/src/**/*.js'],
                 html: [clientPath + '/src/index.html'],
                 vendor: [
-                    vendorPath + '/lodash/dist/lodash.js',
-                    //vendorPath + '/underscore.string/lib/underscore.string.js',
-                    vendorPath + '/jquery/jquery.js',
-                    //vendorPath + '/backbone/backbone.js',
-                    //vendorPath + '/FitText.js/jquery.fittext.js',
-                    //vendorPath + '/moment/moment.js',
-                    //vendorPath + '/spin.js/spin.js',
-                    vendorPath + '/sly/dist/sly.js'
+                    vendorPath + '/lodash.js',
+                    //vendorPath + '/underscore.string.js',
+                    vendorPath + '/jquery.js',
+                    //vendorPath + '/backbone.js',
+                    //vendorPath + '/jquery.fittext.js',
+                    //vendorPath + '/moment.js',
+                    //vendorPath + '/spin.js',
+                    vendorPath + '//sly.js'
                 ],
                 sassDir: sassPath,
                 sass: [sassPath + '/**/*.scss'],
