@@ -1,5 +1,5 @@
 /*!
- * sly 1.2.1 - 12th Nov 2013
+ * sly 1.2.2 - 18th Nov 2013
  * https://github.com/Darsain/sly
  *
  * Licensed under the MIT license.
@@ -112,7 +112,7 @@
 		var scrolling = {
 			last: 0,
 			delta: 0,
-			resetTime: 200
+			resetTime: 150
 		};
 		var renderID = 0;
 		var historyID = 0;
@@ -738,12 +738,17 @@
 		 * @return {Int}  Item index, or -1 if not found.
 		 */
 		function getIndex(item) {
-			return item != null ?
-					isNumber(item) ?
-						item >= 0 && item < items.length ? item : -1 :
-						$items.index(item) :
-					-1;
+            if (item != null) {
+                if (isNumber(item)) {
+                    return item >= 0 && item < items.length ? item : -1;
+                } else {
+                    return $items.index(item);
+                }
+            } else {
+                return -1;
+            }
 		}
+
 		// Expose getIndex without lowering the compressibility of it,
 		// as it is used quite often throughout Sly.
 		self.getIndex = getIndex;
@@ -816,6 +821,8 @@
 					resetCycle();
 				}
 			}
+
+            return index;
 		};
 
 		/**
@@ -1427,16 +1434,20 @@
 
 				// Adjust path with a swing on mouse release
 				if (o.releaseSwing && dragging.slidee) {
-					dragging.swing = (dragging.delta - dragging.history[0]) / 40 * 300;
+					dragging.swing = (dragging.delta - dragging.history[1]) * 20;
 					dragging.delta += dragging.swing;
 					dragging.tweese = Math.abs(dragging.swing) > 10;
+
+                    if (Math.abs(dragging.delta) > 180) {
+                        var item = rel.activeItem + (dragging.delta > 0 ? -1 : 1);
+                        if (self.activate(item)) { return; }
+                    }
 				}
-			} else {
+			} else if (dragging.locked || !dragging.touch) {
 				stopDefault(event);
 			}
 
 			slideTo(dragging.slidee ? Math.round(dragging.initPos - dragging.delta) : handleToSlidee(dragging.initPos + dragging.delta));
-
 		}
 
 		/**
@@ -1529,11 +1540,15 @@
 				return scrolling.curDelta;
 			}
 			time = +new Date();
-			if (scrolling.last < time - scrolling.resetTime) {
+			if (scrolling.last > time - scrolling.resetTime) {
 				scrolling.delta = 0;
+                scrolling.finalDelta = 0;
+                scrolling.last = time;
+                return 0;
 			}
 			scrolling.last = time;
 			scrolling.delta += scrolling.curDelta;
+
 			if (Math.abs(scrolling.delta) < 1) {
 				scrolling.finalDelta = 0;
 			} else {

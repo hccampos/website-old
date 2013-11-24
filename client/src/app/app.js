@@ -19,12 +19,12 @@
         startAt: 0,
         scrollBy: 1,
         activatePageOn: 'click',
-        speed: 1000,
-        swingSpeed: 0.05,
+        speed: 500,
         elasticBounds: 1,
         dragHandle: 1,
         dynamicHandle: 1,
-        clickBar: 1
+        clickBar: 1,
+        keyboardNavBy: 'items'
     };
 
     var backgroundColors = [
@@ -37,7 +37,7 @@
 
     var setItemSize = function () {
         var itemWidth = Math.min(1200, $window.width());
-        $list.css('width', itemWidth * $list.length);
+        $list.css('width', itemWidth * $listItems.length);
         $listItems.css('width', itemWidth);
     };
 

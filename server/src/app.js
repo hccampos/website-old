@@ -13,7 +13,7 @@ var config = inject('config');
 var app = express();
 
 // Load and setup the controllers.
-app.use(express.static(path.normalize(config.dirs.staticFiles), {default: ''}));
+app.use(express.static(path.normalize(config.dirs.staticFiles), {default: 'index.html'}));
 
 // Start the server.
 var port = process.env.PORT || 5000;

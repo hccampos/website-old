@@ -149,6 +149,7 @@ module.exports = function (grunt) {
             all: {
                 files: [
                     '<%= src.client.js %>',
+                    '<%= src.client.vendor %>',
                     '<%= src.client.html %>',
                     '<%= src.client.sass %>'
                 ],
