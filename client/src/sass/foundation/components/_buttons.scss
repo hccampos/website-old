@@ -143,7 +143,7 @@ $button-disabled-opacity: 0.6 !default;
   }
 
   @if $popped == true {
-    @include box-shadow(0 $button-popped-height 0 darken($bg, 20%));
+    @include box-shadow(0 $button-popped-height 0 darken($bg, 15%));
 
     &:active {
       top: $button-popped-height;

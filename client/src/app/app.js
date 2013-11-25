@@ -34,7 +34,7 @@
         {bg: '#FF4445', body: '#fff', hash: 'works'},
         {bg: '#27ae60', body: '#fff', hash: 'tools'},
         {bg: '#FF573B', body: '#fff', hash: 'hobbies'},
-        {bg: '#FFA898', body: '#fff', hash: 'contact'}
+        {bg: '#D6B444', body: '#fff', hash: 'contact'}
     ];
 
     var getCurrentPageIndex = function () {
