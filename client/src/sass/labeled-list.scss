@@ -22,14 +22,9 @@ ul.labeled-list {
       display: inline-block;
       height: 1.8em;
       vertical-align: middle;
-      max-width: 0;
       overflow: hidden;
-      opacity: 0;
       line-height: 1.5em;
       white-space: nowrap;
-
-      @include transition-duration(1.5s);
-      @include transition-property(max-width, opacity);
     }
 
     a {
@@ -37,16 +32,7 @@ ul.labeled-list {
       text-decoration: none;
       height: 1.8em;
 
-      @include transition-property(color);
-      @include transition-duration(0.5s);
-
-      &:hover {
-        color: fade-out(#000, 0.55);
-        .label {
-          max-width: 500px;
-          opacity: 1;
-        }
-      }
+      &:hover { color: fade-out(#000, 0.55); }
     }
   }
 }
@@ -55,5 +41,26 @@ ul.labeled-list {
   ul.labeled-list li {
     font-size: 1em;
     font-weight: 300;
+  }
+}
+
+@media #{$medium} {
+  ul.labeled-list li {
+    .label {
+      max-width: 0;
+      opacity: 0;
+      @include transition-duration(1.5s);
+      @include transition-property(max-width, opacity);
+    }
+
+    a {
+      @include transition-property(color);
+      @include transition-duration(0.5s);
+
+      &:hover .label {
+        max-width: 500px;
+        opacity: 1;
+      }
+    }
   }
 }

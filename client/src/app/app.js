@@ -1,6 +1,7 @@
 (function (document, window, $) {
     var $body = $('body');
     var $slyFrame = $('#frame');
+    var $scrollBar = $slyFrame.parent().find('.scrollbar');
     var $list = $('ul.slidee', $slyFrame);
     var $listItems = $('li.page', $list);
     var $window = $(window);
@@ -18,6 +19,7 @@
         releaseSwing: 1,
         startAt: 0,
         scrollBy: 1,
+        scrollBar: $scrollBar,
         activatePageOn: 'click',
         speed: 500,
         elasticBounds: 1,
@@ -27,13 +29,23 @@
         keyboardNavBy: 'items'
     };
 
-    var backgroundColors = [
-        {bg: '#3498db', body: '#fff'},
-        {bg: '#FF4445', body: '#fff'},
-        {bg: '#27ae60', body: '#fff'},
-        {bg: '#FF573B', body: '#fff'},
-        {bg: '#FFA898', body: '#fff'}
+    var pageOptions = [
+        {bg: '#3498db', body: '#fff', hash: ''},
+        {bg: '#FF4445', body: '#fff', hash: 'works'},
+        {bg: '#27ae60', body: '#fff', hash: 'tools'},
+        {bg: '#FF573B', body: '#fff', hash: 'hobbies'},
+        {bg: '#FFA898', body: '#fff', hash: 'contact'}
     ];
+
+    var getCurrentPageIndex = function () {
+        var hash = window.location.hash;
+        hash = hash.length > 1 ? hash.substr(1) : null;
+
+        for (var i = 0; i < pageOptions.length; ++i) {
+            if (pageOptions[i].hash === hash) { return i; }
+        }
+        return 0;
+    };
 
     var setItemSize = function () {
         var itemWidth = Math.min(1200, $window.width());
@@ -41,23 +53,40 @@
         $listItems.css('width', itemWidth);
     };
 
-    var onActiveItemChanged = function (eventName, itemIndex) {
-        var colors = backgroundColors[itemIndex];
-        $body.css('background', colors.bg);
-        $body.css('color', colors.body + ' !important');
+    var goToCurrentPage = function (immediate) {
+        var pageIndex = getCurrentPageIndex();
+        sly.activate(pageIndex, immediate);
+        if (sly.rel.activeItem === pageIndex) { onActiveItemChanged('active', pageIndex); }
     };
 
-    var onResize = _.debounce(function () {
-        setItemSize();
-        _.delay(function () { sly.reload(); }, 20);
-    }, 100);
+    var onActiveItemChanged = function (eventName, pageIndex) {
+        var options = pageOptions[pageIndex];
+        $body.css('background', options.bg);
+        $body.css('color', options.body + ' !important');
+        window.location.hash = options.hash;
+    };
+
+    var timeout;
+    var onResize = function () {
+        if (timeout) { window.clearTimeout(timeout); }
+
+        timeout = window.setTimeout(function () {
+            setItemSize();
+            sly.reload();
+        }, 100);
+    };
+
+    var onHashChanged = function () {
+        goToCurrentPage();
+    };
 
     var init = function() {
         setItemSize();
         sly = new Sly($slyFrame, slyOptions).init();
         sly.on('active', onActiveItemChanged);
 
-        onActiveItemChanged('active', 0);
+        goToCurrentPage(true);
+        $window.on('hashchange', onHashChanged);
     };
 
     $window.resize(onResize);

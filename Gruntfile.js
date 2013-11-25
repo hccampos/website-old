@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                 js: [clientPath + '/src/**/*.js'],
                 html: [clientPath + '/src/index.html'],
                 vendor: [
-                    vendorPath + '/lodash.js',
+                    //vendorPath + '/lodash.js',
                     //vendorPath + '/underscore.string.js',
                     vendorPath + '/jquery.js',
                     //vendorPath + '/backbone.js',
