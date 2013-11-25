@@ -87,6 +87,11 @@
 
         goToCurrentPage(true);
         $window.on('hashchange', onHashChanged);
+
+        var is_touch_device = 'ontouchstart' in document.documentElement;
+        if(is_touch_device) alert("touch is enabled!");
+
+        $body.addClass(("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
     };
 
     $window.resize(onResize);

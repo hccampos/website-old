@@ -44,23 +44,21 @@ ul.labeled-list {
   }
 }
 
-@media #{$medium} {
-  ul.labeled-list li {
-    .label {
-      max-width: 0;
-      opacity: 0;
-      @include transition-duration(1.5s);
-      @include transition-property(max-width, opacity);
-    }
+.no-touch ul.labeled-list li {
+  .label {
+    max-width: 0;
+    opacity: 0;
+    @include transition-duration(1.5s);
+    @include transition-property(max-width, opacity);
+  }
 
-    a {
-      @include transition-property(color);
-      @include transition-duration(0.5s);
+  a {
+    @include transition-property(color);
+    @include transition-duration(0.5s);
 
-      &:hover .label {
-        max-width: 500px;
-        opacity: 1;
-      }
+    &:hover .label {
+      max-width: 500px;
+      opacity: 1;
     }
   }
 }
