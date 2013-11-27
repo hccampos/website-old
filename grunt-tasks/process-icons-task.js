@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var async = require('async');
-var fs = require('fs.extra');
+var fs = require('fs');
 var unzip = require('unzip');
 var path = require('path');
 var timers = require('timers');
