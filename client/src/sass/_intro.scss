@@ -1,6 +1,4 @@
 #intro-page {
-  position: relative;
-
   h1 {
     padding-top: 0.2em;
     padding-bottom: 0;
@@ -9,6 +7,7 @@
 
   .item-main {
     padding-bottom: 1.5em;
+    position: relative;
   }
 
   .handwriting {
@@ -18,10 +17,6 @@
   }
 
   .swipe-icon {
-    position: absolute;
-    bottom: 0.3em;
-    left: 50%;
-    margin-left: -0.5em;
     text-align: center;
     margin-top: 1em;
     font-size: 2em;

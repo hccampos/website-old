@@ -1,11 +1,3 @@
-.card {
-  @include transform(rotateY(0deg));
-  @include transform-style(preserve-3d);
-  @include transition-duration(1s);
-  @include transition-property(transform);
-  @include backface-visibility(hidden);
-}
-
 .card-wrapper {
   @include perspective(800px);
   @include perspective-origin(50% 50%);
@@ -18,7 +10,13 @@
   }
 }
 
-.card-wrapper
+.card {
+  @include transform(rotateY(0deg));
+  @include transform-style(preserve-3d);
+  @include transition-duration(1s);
+  @include transition-property(transform);
+  @include backface-visibility(hidden);
+}
 
 .card-face {
   position: absolute;
@@ -26,7 +24,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   @include transform-style(preserve-3d);
   @include backface-visibility(hidden);
 

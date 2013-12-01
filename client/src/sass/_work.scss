@@ -37,9 +37,16 @@ $img-link-size: 5.5em;
     &:hover { color: $body-font-color; }
   }
 
-  .card-face.back {
+  .card-face img {
+    border-radius: 20px;
+  }
+
+  .card-back-content-wrapper {
     display: table;
+    width: 100%;
+    height: 100%;
     background: #e44041;
+    border-radius: 20px;
   }
 
   .card-back-content {

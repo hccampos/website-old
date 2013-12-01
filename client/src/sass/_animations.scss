@@ -1,4 +1,4 @@
 @include keyframes(bounce-left-right) {
-  from { @include transform(translateX(0)); }
-  to { @include transform(translateX(1em)); }
+  from { @include transform(translateX(-0.5em)); }
+  to { @include transform(translateX(0.5em)); }
 }
