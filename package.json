@@ -9,7 +9,6 @@
     "dependencies": {
         "async": "0.2.9",
         "express": "3.4.4",
-        "fs.extra": "1.2.1",
         "handlebars": "1.1.2",
         "iz": "0.3.0",
         "lodash": "2.3.0",
