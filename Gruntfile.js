@@ -68,7 +68,7 @@ module.exports = function (grunt) {
                     //vendorPath + '/jquery.fittext.js',
                     //vendorPath + '/moment.js',
                     //vendorPath + '/spin.js',
-                    vendorPath + '//sly.js'
+                    vendorPath + '/sly.js'
                 ],
                 sassDir: sassPath,
                 sass: [sassPath + '/**/*.scss'],
