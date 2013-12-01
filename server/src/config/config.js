@@ -37,7 +37,7 @@ var developmentConfig = {
 var productionConfig = {
     env: 'production',
     appName: 'hccampos',
-    baseUrl: 'https://www.hccampos.com',
+    baseUrl: 'https://www.hccampos.net',
     logPaths: false
 };
 
