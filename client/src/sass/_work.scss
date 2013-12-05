@@ -19,15 +19,14 @@ $img-link-size: 5.5em;
   .card-wrapper {
     display: inline-block;
     padding: 0.2em;
+    text-decoration: none;
+    color: $body-font-color;
   }
 
   .card {
-    display: block;
     position: relative;
     width: $img-link-size;
     height: $img-link-size;
-    text-decoration: none;
-    color: $body-font-color;
 
     img {
       display: block;

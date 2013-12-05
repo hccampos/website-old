@@ -9,3 +9,4 @@ build.xml
 .settings
 .idea
 npm-debug.log
+*.log
