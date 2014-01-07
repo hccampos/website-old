@@ -22,8 +22,20 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+$icon-bitbucket: "\e600";
+.icon-bitbucket:before { content: $icon-bitbucket; }
+
+$icon-mongo: "\e610";
+.icon-mongo:before { content: $icon-mongo; }
+
+$icon-sass: "\e620";
+.icon-sass:before { content: $icon-sass; }
+
 $icon-heart: "\e601";
 .icon-heart:before { content: $icon-heart; }
+
+$icon-mail: "\e602";
+.icon-mail:before { content: $icon-mail; }
 
 $icon-twitter: "\e604";
 .icon-twitter:before { content: $icon-twitter; }
@@ -37,23 +49,32 @@ $icon-linkedin: "\e606";
 $icon-googleplus: "\e607";
 .icon-googleplus:before { content: $icon-googleplus; }
 
-$icon-github: "\e608";
-.icon-github:before { content: $icon-github; }
+$icon-yii: "\e611";
+.icon-yii:before { content: $icon-yii; }
 
-$icon-mail: "\e602";
-.icon-mail:before { content: $icon-mail; }
+$icon-think: "\e612";
+.icon-think:before { content: $icon-think; }
 
-$icon-camera: "\e609";
-.icon-camera:before { content: $icon-camera; }
+$icon-popcorn: "\e613";
+.icon-popcorn:before { content: $icon-popcorn; }
 
-$icon-airplane: "\e60a";
-.icon-airplane:before { content: $icon-airplane; }
+$icon-windows: "\e614";
+.icon-windows:before { content: $icon-windows; }
 
-$icon-bootstrap: "\e61f";
-.icon-bootstrap:before { content: $icon-bootstrap; }
+$icon-html5: "\e616";
+.icon-html5:before { content: $icon-html5; }
 
-$icon-sass: "\e620";
-.icon-sass:before { content: $icon-sass; }
+$icon-flash: "\e617";
+.icon-flash:before { content: $icon-flash; }
+
+$icon-controller: "\e621";
+.icon-controller:before { content: $icon-controller; }
+
+$icon-android: "\e622";
+.icon-android:before { content: $icon-android; }
+
+$icon-linux: "\e623";
+.icon-linux:before { content: $icon-linux; }
 
 $icon-angularjs: "\e624";
 .icon-angularjs:before { content: $icon-angularjs; }
@@ -64,11 +85,17 @@ $icon-git: "\e625";
 $icon-grunt: "\e626";
 .icon-grunt:before { content: $icon-grunt; }
 
-$icon-eye: "\e627";
-.icon-eye:before { content: $icon-eye; }
+$icon-github: "\e608";
+.icon-github:before { content: $icon-github; }
 
-$icon-swipe: "\e603";
-.icon-swipe:before { content: $icon-swipe; }
+$icon-css3: "\e618";
+.icon-css3:before { content: $icon-css3; }
+
+$icon-camera: "\e609";
+.icon-camera:before { content: $icon-camera; }
+
+$icon-airplane: "\e60a";
+.icon-airplane:before { content: $icon-airplane; }
 
 $icon-pizza: "\e60b";
 .icon-pizza:before { content: $icon-pizza; }
@@ -84,30 +111,6 @@ $icon-mysql: "\e60e";
 
 $icon-moustache: "\e60f";
 .icon-moustache:before { content: $icon-moustache; }
-
-$icon-mongo: "\e610";
-.icon-mongo:before { content: $icon-mongo; }
-
-$icon-yii: "\e611";
-.icon-yii:before { content: $icon-yii; }
-
-$icon-think: "\e612";
-.icon-think:before { content: $icon-think; }
-
-$icon-popcorn: "\e613";
-.icon-popcorn:before { content: $icon-popcorn; }
-
-$icon-chocolate: "\e615";
-.icon-chocolate:before { content: $icon-chocolate; }
-
-$icon-html5: "\e616";
-.icon-html5:before { content: $icon-html5; }
-
-$icon-flash: "\e617";
-.icon-flash:before { content: $icon-flash; }
-
-$icon-css3: "\e618";
-.icon-css3:before { content: $icon-css3; }
 
 $icon-jquery: "\e619";
 .icon-jquery:before { content: $icon-jquery; }
@@ -127,17 +130,44 @@ $icon-cplusplus: "\e61d";
 $icon-csharp: "\e61e";
 .icon-csharp:before { content: $icon-csharp; }
 
-$icon-controller: "\e621";
-.icon-controller:before { content: $icon-controller; }
+$icon-bootstrap: "\e61f";
+.icon-bootstrap:before { content: $icon-bootstrap; }
 
-$icon-bitbucket: "\e600";
-.icon-bitbucket:before { content: $icon-bitbucket; }
+$icon-eye: "\e627";
+.icon-eye:before { content: $icon-eye; }
 
-$icon-windows: "\e614";
-.icon-windows:before { content: $icon-windows; }
+$icon-xna: "\e603";
+.icon-xna:before { content: $icon-xna; }
 
-$icon-android: "\e622";
-.icon-android:before { content: $icon-android; }
+$icon-directx: "\e628";
+.icon-directx:before { content: $icon-directx; }
 
-$icon-linux: "\e623";
-.icon-linux:before { content: $icon-linux; }
+$icon-webgl: "\e629";
+.icon-webgl:before { content: $icon-webgl; }
+
+$icon-air: "\e62a";
+.icon-air:before { content: $icon-air; }
+
+$icon-d3: "\e62b";
+.icon-d3:before { content: $icon-d3; }
+
+$icon-javascript: "\e62d";
+.icon-javascript:before { content: $icon-javascript; }
+
+$icon-openfl: "\e62e";
+.icon-openfl:before { content: $icon-openfl; }
+
+$icon-opengl: "\e62f";
+.icon-opengl:before { content: $icon-opengl; }
+
+$icon-haxe: "\e615";
+.icon-haxe:before { content: $icon-haxe; }
+
+$icon-backbone: "\e62c";
+.icon-backbone:before { content: $icon-backbone; }
+
+$icon-apache: "\e630";
+.icon-apache:before { content: $icon-apache; }
+
+$icon-swipe: "\e631";
+.icon-swipe:before { content: $icon-swipe; }

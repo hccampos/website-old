@@ -8,7 +8,7 @@ ul.labeled-list {
   li {
     margin: 0;
     margin-bottom: 0.5em;
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-weight: 400;
 
     i {
@@ -39,7 +39,7 @@ ul.labeled-list {
 
 @media #{$small} {
   ul.labeled-list li {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 300;
   }
 }

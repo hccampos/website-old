@@ -4,12 +4,7 @@ var express = require('express');
 var path = require('path');
 var env = process.env.NODE_ENV || 'development';
 
-// Configures all the modules required by app.
-var basePath = path.normalize(__dirname) + '/';
-require(basePath + 'config/modules')(basePath, env);
-
-var inject = require(basePath + 'utils/injector').inject;
-var config = inject('config');
+var config = require('./config/config')(env);
 
 // Configure the server so we can pass it to the controllers.
 var app = express();
