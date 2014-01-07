@@ -149,17 +149,17 @@ h1 {
 }
 
 @media screen and (max-height: 800px) {
-  html, body { font-size: 140%; }
+  html, body { font-size: 130%; }
   #frame ul.slidee li.page { padding: 25px; }
 }
 
 @media screen and (max-height: 600px) {
-  html, body { font-size: 130%; }
+  html, body { font-size: 120%; }
   #frame ul.slidee li.page { padding: 20px; }
 }
 
 @media screen and (max-height: 400px) {
-  html, body { font-size: 120%; }
+  html, body { font-size: 100%; }
   #frame ul.slidee li.page { padding: 10px; }
 }
 
