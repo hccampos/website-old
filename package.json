@@ -11,6 +11,7 @@
         "express": "3.4.7",
         "newrelic": "*",
         "unzip": "0.1.9",
+        "lodash": "2.4.1",
 
         "grunt": "~0.4.2",
         "grunt-contrib-clean": "~0.5.0",
