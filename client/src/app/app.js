@@ -22,10 +22,11 @@
         scrollBar: $scrollBar,
         activatePageOn: 'click',
         speed: 500,
+        easing: 'easeOutQuart',
         elasticBounds: 1,
         dragHandle: 1,
         dynamicHandle: 1,
-        clickBar: 1,
+        clickBar: 0,
         keyboardNavBy: 'items'
     };
 

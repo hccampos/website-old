@@ -1,5 +1,4 @@
 var path = require('path');
-var _ = require('lodash');
 
 module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-preprocess');
@@ -61,13 +60,8 @@ module.exports = function (grunt) {
                 js: [clientPath + '/src/**/*.js'],
                 html: [clientPath + '/src/index.html'],
                 vendor: [
-                    //vendorPath + '/lodash.js',
-                    //vendorPath + '/underscore.string.js',
                     vendorPath + '/jquery.js',
-                    //vendorPath + '/backbone.js',
-                    //vendorPath + '/jquery.fittext.js',
-                    //vendorPath + '/moment.js',
-                    //vendorPath + '/spin.js',
+                    vendorPath + '/jquery.easing.1.3.js',
                     vendorPath + '/sly.js'
                 ],
                 sassDir: sassPath,

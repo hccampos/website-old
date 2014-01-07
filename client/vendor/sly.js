@@ -1438,7 +1438,7 @@
 					dragging.delta += dragging.swing;
 					dragging.tweese = Math.abs(dragging.swing) > 10;
 
-                    if (Math.abs(dragging.delta) > 80) {
+                    if (Math.abs(dragging.delta) > 40) {
                         var item = rel.activeItem + (dragging.delta > 0 ? -1 : 1);
                         if (self.activate(item)) { return; }
                     }
