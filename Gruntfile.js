@@ -62,7 +62,7 @@ module.exports = function (grunt) {
                 vendor: [
                     vendorPath + '/jquery.js',
                     vendorPath + '/jquery.easing.1.3.js',
-                    vendorPath + '/sly.js'
+                    vendorPath + '/sly-alt.js'
                 ],
                 sassDir: sassPath,
                 sass: [sassPath + '/**/*.scss'],
