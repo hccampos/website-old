@@ -34,7 +34,6 @@
         {bg: '#3498db', body: '#fff', hash: ''},
         {bg: '#FF4445', body: '#fff', hash: 'works'},
         {bg: '#27ae60', body: '#fff', hash: 'tools'},
-        {bg: '#FF573B', body: '#fff', hash: 'hobbies'},
         {bg: '#D6B444', body: '#fff', hash: 'contact'}
     ];
 
