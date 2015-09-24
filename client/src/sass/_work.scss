@@ -1,78 +1,80 @@
 $img-link-size: 5.5em;
 
 #work-page {
-  h1 { text-align: center; }
+	h1 { text-align: center; }
 
-  .intro {
-    text-align: center;
-    font-size: 0.8em;
-  }
+	.intro {
+		text-align: center;
+		font-size: 0.8em;
+	}
 
-  .links-container {
-    width: 100%;
-    margin-top: 1em;
-    margin-bottom: 0.2;
-    font-size: 0.6em;
-    text-align: center;
-  }
+	.links-container {
+		width: 100%;
+		margin-top: 1em;
+		margin-bottom: 0.2;
+		font-size: 0.6em;
+		text-align: center;
+	}
 
-  .card-wrapper {
-    display: inline-block;
-    padding: 0.2em;
-    text-decoration: none;
-    color: $body-font-color;
-  }
+	.card-wrapper {
+		display: inline-block;
+		padding: 0.2em;
+		text-decoration: none;
+		color: $body-font-color;
+	}
 
-  .card {
-    position: relative;
-    width: $img-link-size;
-    height: $img-link-size;
+	.card {
+		position: relative;
+		width: $img-link-size;
+		height: $img-link-size;
 
-    img {
-      display: block;
-      @include backface-visibility(hidden);
-    }
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			@include backface-visibility(hidden);
+		}
 
-    &:hover { color: $body-font-color; }
-  }
+		&:hover { color: $body-font-color; }
+	}
 
-  .card-face img {
-    border-radius: 20px;
-  }
+	.card-face img {
+		border-radius: 5px;
+	}
 
-  .card-back-content-wrapper {
-    display: table;
-    width: 100%;
-    height: 100%;
-    background: #e44041;
-    border-radius: 20px;
-  }
+	.card-back-content-wrapper {
+		display: table;
+		width: 100%;
+		height: 100%;
+		background: #e44041;
+		border-radius: 5px;
+	}
 
-  .card-back-content {
-    display: table-cell;
-    padding: 0.2em;
-    vertical-align: middle;
-    font-size: 0.8em;
+	.card-back-content {
+		display: table-cell;
+		padding: 0.2em;
+		vertical-align: middle;
+		font-size: 0.8em;
 
-    i { font-size: 2em; }
-  }
+		i { font-size: 2em; }
+	}
 }
 
 @media screen and (min-width: 400px) {
-  #work-page .links-container { font-size: 0.7em; }
+	#work-page .links-container { font-size: 0.7em; }
 }
 
 @media screen and (min-width: 525px) {
-  #work-page .links-container { font-size: 0.8em; }
+	#work-page .links-container { font-size: 0.8em; }
 }
 
 @media screen and (min-width: 650px) {
-  #work-page {
-    .intro { font-size: 1em; }
-    .links-container { font-size: 0.9em; }
-  }
+	#work-page {
+		.intro { font-size: 1em; }
+		.links-container { font-size: 0.9em; }
+	}
 }
 
 @media #{$small} {
-  #work-page .links-container { font-size: 1em; }
+	#work-page .links-container { font-size: 1em; }
 }
